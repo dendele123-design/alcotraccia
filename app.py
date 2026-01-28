@@ -4,7 +4,7 @@ import time
 # --- CONFIGURAZIONE ---
 st.set_page_config(page_title="Alco-Traccia", page_icon="🍺")
 
-# --- NASCONDERE ELEMENTI GRAFICI (CSS AVANZATO) ---
+# --- NASCONDERE TUTTO (CSS ULTIMATE) ---
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -12,6 +12,8 @@ hide_st_style = """
             footer {visibility: hidden;}
             .stAppDeployButton {display:none;}
             [data-testid="stStatusWidget"] {visibility: hidden;}
+            [data-testid="stToolbar"] {visibility: hidden;}
+            [data-testid="stDecoration"] {visibility: hidden;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
@@ -111,4 +113,5 @@ if st.button("CALCOLA IL TASSO 🧮", type="primary"):
     st.info(f"💡 {consiglio}")
 
     st.write(f"Hai assunto circa **{grammi_alcol:.1f}g** di alcol puro.")
+
 
