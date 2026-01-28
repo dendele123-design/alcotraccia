@@ -4,6 +4,17 @@ import time
 # --- CONFIGURAZIONE ---
 st.set_page_config(page_title="Alco-Traccia", page_icon="🍺")
 
+# --- NASCONDERE ELEMENTI GRAFICI (CSS) ---
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            footer {visibility: hidden;}
+            .stAppDeployButton {display:none;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.title("🍺 Alco-Traccia")
 st.write("Calcolatore Tasso Alcolemico (Stima Widmark)")
 
@@ -97,4 +108,5 @@ if st.button("CALCOLA IL TASSO 🧮", type="primary"):
     m2.metric("Tempo per tornare a 0.0", f"{ore_per_smaltire:.1f} Ore")
     
     st.info(f"💡 {consiglio}")
+
     st.write(f"Hai assunto circa **{grammi_alcol:.1f}g** di alcol puro.")
